@@ -194,3 +194,19 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+
+  max-width: 1200px;
+  margin: 80px auto;   /* centers the whole section */
+  padding: 0 20px;
+}
+
+/* Optional: make each product look more like a Shopify card */
+.products-container > div {
+  display: flex;
+  justify-content: center;
+}

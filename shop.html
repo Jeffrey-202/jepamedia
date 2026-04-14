@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JEPA MEDIA</title>
+    <meta name="description" content="JEPA MEDIA - Your gateway to stunning digital art AND DESIGN" />
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+
+<h1 id="main-header">SHOP</h1>
+
+
+
+
+
+<div class="products-container">
+  <div id="product-1"></div>
+  <div id="product-2"></div>
+  <div id="product-3"></div>
+  <div id="product-4"></div>
+</div>
+
+<script>
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    document.head.appendChild(script);
+    script.onload = initShopify;
+  }
+
+  function initShopify() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'neiknq-uy.myshopify.com',
+      storefrontAccessToken: 'c3fe782e74ffc800b01e8bf37fec3f04',
+    });
+
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+
+      const products = [
+        { id: '15665230676299', node: 'product-1' },
+        { id: '15665203020107', node: 'product-2' },
+        { id: '15665231921483', node: 'product-3' },
+        { id: '15665243455819', node: 'product-4' },
+      ];
+
+      products.forEach(p => {
+        ui.createComponent('product', {
+          id: p.id,
+          node: document.getElementById(p.node),
+          moneyFormat: '%E2%82%AC%7B%7Bamount_with_comma_separator%7D%7D',
+          options: {
+            product: {
+              styles: {
+                title: { color: "#000" },
+                button: {
+                  backgroundColor: "#000",
+                  ":hover": { backgroundColor: "#000" }
+                }
+              },
+              text: {
+                button: "Add to cart"
+              }
+            }
+          }
+        });
+      });
+
+    });
+  }
+
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      initShopify();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+})();
+</script>
