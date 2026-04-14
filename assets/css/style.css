@@ -1,6 +1,10 @@
+
 body {
     font-family: "Audiowide", sans-serif;
     margin: 0;
+    min-height: 100%;
+    padding: 0;
+    overflow-y: auto;
     background-image: url("../images/backgroundweb.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -17,19 +21,50 @@ body {
     letter-spacing: 2px;
 }
 
+
+
+.jepatext1 {
+    font-family:"Archivo Black", sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    margin: 50px 0px;
+}
+
+.boxtext {
+    width: 80%;
+    height: 200px;
+    background-color: #000000;
+    margin: 50px auto;
+}
+
+
+.video-container,
+.video-container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;           /* Full width to center content */
+    margin-bottom: 80px;   /* Space below each container */
+    size-adjust: 10px;
+    position: relative;
+    z-index: 1;
+}
+
 .icons button {
     position: absolute;
-    bottom: 8px;
+    bottom: 24px;
     left: 50%;
-    transform: translateX(-50%) translateY(10px);
+    transform: translateX(-50%) translateY(0);
 
     opacity: 0;
     padding: 8px 14px;
 
     border: none;
-    border-radius: 50px; /* rounded pill shape */
+    border-radius: 50px;
 
-    background: linear-gradient(135deg, #535353, #454746); /* green gradient */
+    background: linear-gradient(135deg, #535353, #454746);
     color: white;
     font-size: 20px;
     font-weight: 600;
