@@ -1,5 +1,5 @@
 
-body {
+body {   /* Global styles for the entire page */
     font-family: "Audiowide", sans-serif;
     margin: 0;
     min-height: 100vh;
@@ -18,7 +18,7 @@ body {
     box-sizing: border-box;
 }
 
-.site-header {
+.site-header {  /* Styles for the header section */
     position: fixed;
     top: 0;
     left: 0;
@@ -101,6 +101,11 @@ body {
             filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5))
 }
 
+
+
+
+
+
 /* Content area expands to push footer down */
 .content {
   flex: 1;  /* Takes all available space */
@@ -170,6 +175,14 @@ body {
   height: auto;             /* keep aspect ratio */
 }
 
+
+
+
+
+
+
+
+
 .icons button {
     position: absolute;
     bottom: 24px;
@@ -193,6 +206,12 @@ body {
 
     transition: all 0.3s ease;
 }
+
+
+
+
+
+
 
 /* Show button on hover of .icons */
 .icons:hover button {
@@ -397,4 +416,299 @@ textarea:focus {
     border: 3px solid #888b8f;
 }
 
+.galleryhome{
+  position:relative;
+  width:300px;
+  height:200px;
+  transform-style:preserve-3d;
+  animation:rotate 35s linear infinite;
+}
 
+@keyframes rotate{
+  from{
+    transform:perspective(1200px) rotateY(0deg);
+  }
+  
+  to{
+    transform:perspective(1200px) rotateY(360deg);
+  }
+}
+
+.galleryhome span{
+  position:absolute;
+  width:100%;
+  height:100%;
+  transform-origin:center;
+  transform-style:preserve-3d;
+  transform:rotateY(calc(var(--i) * 45deg)) translateZ(380px);
+}
+
+.galleryhome span img{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+
+
+       /*gallery section style*/
+
+        .home-icon-link {
+            background: #f2e7de;
+            border-radius: 60px;
+            padding: 6px 12px;
+            transition: all 0.2s;
+        }
+
+        .home-icon-link:hover {
+            background: #e6d5c8;
+        }
+
+        /* ---------- MAIN CONTAINER ---------- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* ---------- GALLERY HEADER ---------- */
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .gallery-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c2b26;
+            margin-bottom: 0.5rem;
+        }
+
+        .howto-block {
+            background: #f9f4ed;
+            border-radius: 60px;
+            padding: 0.5rem 1.2rem;
+            display: inline-block;
+            font-size: 0.8rem;
+            margin-top: 12px;
+        }
+
+        /* ---------- FILTER BAR WITH IMAGE LOGOS ---------- */
+       .categories-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ede5dc;
+}
+
+.cat-btn {
+    background: transparent;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 60px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #000000;
+    font-family: 'Archivo Black', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cat-logo {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.cat-btn:hover {
+    background: #000000;
+    color: #ecdcd2;
+}
+
+.cat-btn.active {
+    background: #1f2a2e;
+    color: rgb(255, 255, 255);
+}
+
+/* ---------- GALLERY GRID ---------- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+/* ---------- ART CARD ---------- */
+.art-card {
+    background: #000000;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid #f0e8e0;
+    display: flex;
+    flex-direction: column;
+}
+
+.art-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.image-wrapper {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #f3ede7;
+}
+
+.art-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.art-card:hover .art-image {
+    transform: scale(1.03);
+}
+
+.art-info {
+    padding: 1.5rem;
+    color: #ffffff;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.art-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.art-artist {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #cccccc;
+    margin-bottom: 0.5rem;
+}
+
+.art-description {
+    font-size: 0.85rem;
+    color: #dddddd;
+    line-height: 1.4;
+}
+
+.category-badge {
+    display: inline-block;
+    margin-top: 0.8rem;
+    font-size: 0.7rem;
+    background: #f2ebe3;
+    padding: 0.25rem 0.75rem;
+    border-radius: 30px;
+    color: #6e5c4b;
+    align-self: flex-start;
+}
+
+/* ---------- FULLSCREEN OVERLAY ---------- */
+.fullscreen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 9, 8, 0.95);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.fullscreen-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.fs-image-container {
+    max-width: 90vw;
+    max-height: 85vh;
+}
+
+.fs-image-container img {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.close-fs {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: rgba(0,0,0,0.6);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    border: none;
+}
+
+.fs-controls {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+}
+
+.fs-btn {
+    background: rgba(0,0,0,0.6);
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.footer-note {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e6ddd3;
+    font-size: 0.7rem;
+    color: #a39183;
+}
+
+@media (max-width: 680px) {
+    .container { padding: 1rem; }
+    .site-title { font-size: 1.2rem; }
+    .gallery-header h1 { font-size: 1.8rem; }
+    .cat-btn { padding: 0.4rem 0.8rem; font-size: 0.75rem; }
+    .cat-logo { width: 18px; height: 18px; }
+    .gallery-grid { 
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1rem; 
+    }
+    .art-info { padding: 1rem; }
+    .art-title { font-size: 1.1rem; }
+}
