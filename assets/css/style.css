@@ -18,6 +18,40 @@ body {   /* Global styles for the entire page */
     box-sizing: border-box;
 }
 
+
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.site-footer {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer a {
+  color: #fff;
+  margin-left: 12px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.site-footer a:hover {
+  color: #f04;
+}
+
+
 .site-header {  /* Styles for the header section */
     position: fixed;
     top: 0;
@@ -126,7 +160,7 @@ body {   /* Global styles for the entire page */
     text-align: center;
     padding: 14px 12px;
     font-size: 14px;
-    margin-top: 30px;
+    margin-top: auto; /* Pushes footer to the bottom */
 }
 
 .site-footer p {
